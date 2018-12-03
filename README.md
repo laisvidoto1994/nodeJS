@@ -29,3 +29,6 @@ npm install -g nodemon
 // ele irá instartar á aplicação sem precissar biudar novamente apos uma nova modificação
 
 nodemon app
+
+
+npm install mysql --save
