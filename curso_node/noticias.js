@@ -5,9 +5,25 @@ var http = require('http');
 
 // criando um servidor
 var server = http.createServer(
-    function(requisicao, resposta){
-        resposta.end("<html><body>Portal de Noticias</body></html>");
-    }  
+    function (requisicao, resposta) {
+
+        // descobre qual á url que á requisicao esta sendo passada
+        var categoria = requisicao.url;
+
+        //url é http://localhost:3000/tecnologia
+        if (categoria == "/tecnologia") {
+            resposta.end("<html><body>Noticias de Tecnologia</body></html>");
+        }
+        else if (categoria == "/moda") {
+            resposta.end("<html><body>Noticias de Moda</body></html>");
+        }
+        else if (categoria == "/beleza") {
+            resposta.end("<html><body>Noticias de Beleza</body></html>");
+        }
+        else {
+            resposta.end("<html><body>Portal de Noticias</body></html>");
+        }
+    }
 );
 
 // acessando servidor pela porta 3000
