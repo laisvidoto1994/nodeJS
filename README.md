@@ -27,7 +27,7 @@ npm install express -save
 npm install ejs --save
 
 
-npm install consign
+npm install consign --save
 
 
 npm install -g nodemon
