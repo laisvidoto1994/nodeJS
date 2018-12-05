@@ -8,6 +8,9 @@ nodemon-> um utilitario que reinicia automaticamente o servidor nojeJs quando ho
 
 NPM-> gerenciador de pacotes JavaScript.
 
+consign-> pode ser usado para carregar automaticamente modelos, rotas, esquemas, configurações, controladores, mapas de objetos ... etc
+
+
 //visualiza á versão que foi instalada o node
 
 node -v
@@ -22,6 +25,9 @@ npm install express -save
 
 
 npm install ejs --save
+
+
+npm install consign
 
 
 npm install -g nodemon
