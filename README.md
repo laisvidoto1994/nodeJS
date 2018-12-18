@@ -11,17 +11,17 @@ NPM-> gerenciador de pacotes JavaScript.
 consign-> pode ser usado para carregar automaticamente modelos, rotas, esquemas, configurações, controladores, mapas de objetos ... etc
 
 
-> visualiza á versão que foi instalada o node 
+> visualiza á versão que foi instalada o node  
 node -v
 
-> cria o arquivo package.json 
+> cria o arquivo package.json    
 npm init
 
-> instalando o express  
+> instalando o express     
 npm install express -save
 
 
-npm install ejs --save
+npm install ejs --save 
 
 
 npm install consign --save
