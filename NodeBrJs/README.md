@@ -1,4 +1,4 @@
 
-> para instartar a aplicação
+> para startar a aplicação
 
 ### node index.js
