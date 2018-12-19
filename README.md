@@ -1,5 +1,7 @@
 # nodeJS
 
+exemplo de conceitos-> https://cursos.nodebr.org/courses/448292/lectures/6939052
+
 express-> framework nodeJS para aplicações Web.
 
 EJS-> linguagem de modelagem para criação de paginas HTML utilizando JavaScript.
