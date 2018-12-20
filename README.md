@@ -2,6 +2,8 @@
 
 exemplo de conceitos-> https://cursos.nodebr.org/courses/448292/lectures/6939052
 
+exemplo de node e mongobd-> https://devcenter.heroku.com/articles/mean-apps-restful-api#create-a-new-app
+
 express-> framework nodeJS para aplicações Web.
 
 EJS-> linguagem de modelagem para criação de paginas HTML utilizando JavaScript.
