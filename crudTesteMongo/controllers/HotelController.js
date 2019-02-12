@@ -2,27 +2,69 @@
 
 const express = require('express');
 
-const mongoose = require('../database/db');
+// Models
+const hotelResposta = require('../models/hotel');// models com á extrutura dos dados do banco
 
-const hotelConsulta = require('../models/hotel');// models com á extrutura dos dados do banco
-
+//Rota
 const router = express.Router();
 
-const hotelResposta = require('../models/hotel');
-
-// rota de requisição get
+/**
+ * rota de requisição get
+ * postman-> http://localhost:3000/v1/hotel/buscar
+ */
 router.get('/buscar', async (req, res) => {
     const dados = await hotelResposta.find();
-    console.log(dados);
-    res.status(200).send({dados});
+    res.status(200).send({ dados });
 });
 
+/**
+ * rota de requisição get
+ * postman->http://localhost:3000/v1/hotel/register
+ *  parametros-> {
+        "nome": "mercia",
+        "responsavel":"mercia.cristina",
+        "contato": "4444",
+        "custo": "muito caro",
+        "animais":"sim"
+    } 
+ */
 router.post('/register', async (req, res) => {
-
-    const user = await hotelResposta.create(req.body);
-    return res.status(200).send({ user });
-
+    const retornoDado = await hotelResposta.create(req.body);
+    return res.status(200).send({ retornoDado });
 });
 
-// postman-> http://localhost:3000/v1/hotel/buscar
+/**
+ * rota de requisição put
+ * postman->http://localhost:3000/v1/hotel/atualizar
+ */
+router.put('/atualizar/:id', async (req, res) => {
+
+    var query = { _id: req.params.id };
+
+    hotelResposta.findByIdAndUpdate({ query }, req.body).then(function () {
+        hotelResposta.findOne({ _id: req.params.id })
+            .then(function (update) {
+                res.send(update);
+            });
+    });
+});
+
+
+/**
+ * rota de requisição delete
+ * postman->http://localhost:3000/v1/hotel/excluir
+ */
+router.delete('/excluir/:id', async (req, res) => {
+    var query = { _id: req.params.id };
+    hotelResposta.findByIdAndRemove({ query }, function (err, result) {
+        if (err) {
+            return res.send(err);
+        } else {
+            res.send({ message: 'Deleted' });
+            //res.send({ result });
+        }
+    });
+});
+
+// postman-> http://localhost:3000/v1/hotel/tipoDeRequisicao
 module.exports = app => app.use('/v1/hotel', router);
