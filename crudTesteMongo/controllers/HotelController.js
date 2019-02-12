@@ -13,20 +13,20 @@ const router = express.Router();
  * postman-> http://localhost:3000/v1/hotel/buscar
  */
 router.get('/buscar', async (req, res) => {
-    const dados = await hotelResposta.find();
-    res.status(200).send({ dados });
+    const retornoDado = await hotelResposta.find();
+    res.status(200).send({ retornoDado });
 });
 
 /**
  * rota de requisição get
  * postman->http://localhost:3000/v1/hotel/register
  *  parametros-> {
-        "nome": "mercia",
-        "responsavel":"mercia.cristina",
-        "contato": "4444",
-        "custo": "muito caro",
+        "nome": "hotel Mar Hotel",
+        "responsavel":"Mercia Cristina",
+        "contato": "mercia@marhotel.com",
+        "custo": "R$ 2.000,00",
         "animais":"sim"
-    } 
+    }  
  */
 router.post('/register', async (req, res) => {
     const retornoDado = await hotelResposta.create(req.body);
