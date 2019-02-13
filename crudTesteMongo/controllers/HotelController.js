@@ -10,9 +10,9 @@ const router = express.Router();
 
 /**
  * rota de requisição get
- * postman-> http://localhost:3000/v1/hotel/buscar
+ * postman-> http://localhost:3000/v1/hotel/buscarTodos
  */
-router.get('/buscar', async (req, res) => {
+router.get('/buscarTodos', async (req, res) => {
     const retornoDado = await hotelResposta.find();
     res.status(200).send({ retornoDado });
 });
@@ -52,9 +52,10 @@ router.put('/atualizar/:id', async (req, res) => {
 
 /**
  * rota de requisição delete
- * postman->http://localhost:3000/v1/hotel/excluir
+ * postman->http://localhost:3000/v1/hotel/excluir/5c63361f371ceb41b068c2b0
  */
 router.delete('/excluir/:id', async (req, res) => {
+    console.log(req.params.id);
     var query = { _id: req.params.id };
     hotelResposta.findByIdAndRemove({ query }, function (err, result) {
         if (err) {
